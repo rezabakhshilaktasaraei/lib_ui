@@ -38,12 +38,6 @@ The work includes proper accessibility roles and names for all core widgets, key
 | [#275](https://github.com/desktop-app/lib_ui/pull/275) | **UIAutomation Invoke support** — `accessibilityActionNames()` and `accessibilityDoAction()` virtual API on RpWidget; AbstractButton and Checkbox expose "press" action; deferred activation via `QTimer::singleShot(0)` with safety guards; compatible with NVDA Insert+Enter and JAWS default action | Dec 2025 |
 | [#277](https://github.com/desktop-app/lib_ui/pull/277) | **SettingsButton toggle state** — Reports `checkable` and `checked` state when a toggle is present; fires `accessibilityStateChanged` on toggle changes | Dec 2025 |
 
-### Currently In Review — 1 PR
-
-| PR | Description |
-|----|-------------|
-| [#278](https://github.com/desktop-app/lib_ui/pull/278) | **Accessible::Item for painted elements** — `Item` implements `QAccessibleInterface` for virtual children identified by parent widget + index; `SubItem` for multi-column rows; thread-local `cachedItem()` to avoid allocations; new virtual methods on `RpWidget`: `accessibilityChildCount/Name/Description/Value/State/Rect/Role`, column sub-item methods, change notification helpers; `Accessible::Widget` updated to route `childCount/child/indexOfChild/childAt/focusChild` through the virtual child API |
-
 ### Key Files
 
 | File | Purpose |
@@ -84,16 +78,6 @@ The work includes proper accessibility roles and names for all core widgets, key
 | [#272](https://github.com/desktop-app/lib_ui/pull/272) | <div dir="rtl"><strong>نام دسترس‌پذیری SideBarButton</strong> — متن دکمه با تعداد نشان (مثلاً «Chats (3)»)؛ به‌روزرسانی زنده هنگام تغییر نشان</div> | نوامبر ۲۰۲۵ |
 | [#275](https://github.com/desktop-app/lib_ui/pull/275) | <div dir="rtl"><strong>پشتیبانی UIAutomation Invoke</strong> — API مجازی <code>accessibilityActionNames()</code> و <code>accessibilityDoAction()</code>؛ AbstractButton و Checkbox اکشن "press" را ارائه می‌دهند؛ سازگار با NVDA و JAWS</div> | دسامبر ۲۰۲۵ |
 | [#277](https://github.com/desktop-app/lib_ui/pull/277) | <div dir="rtl"><strong>وضعیت تاگل SettingsButton</strong> — گزارش وضعیت <code>checkable</code> و <code>checked</code> هنگام وجود تاگل؛ اطلاع‌رسانی زنده تغییرات</div> | دسامبر ۲۰۲۵ |
-
-<div dir="rtl" align="right">
-
-### در انتظار بررسی — ۱ PR
-
-</div>
-
-| PR | توضیحات |
-|----|---------|
-| [#278](https://github.com/desktop-app/lib_ui/pull/278) | <div dir="rtl"><strong>Accessible::Item برای عناصر ترسیم‌شده</strong> — <code>Item</code> رابط <code>QAccessibleInterface</code> را برای فرزندان مجازی پیاده‌سازی می‌کند؛ <code>SubItem</code> برای ردیف‌های چندستونی؛ <code>cachedItem()</code> برای جلوگیری از تخصیص حافظه؛ متدهای مجازی جدید روی RpWidget برای شمارش، نام، توضیح، مقدار، وضعیت، ابعاد و نقش فرزندان</div> |
 
 <div dir="rtl" align="right">
 
