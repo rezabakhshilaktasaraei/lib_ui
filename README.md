@@ -1,44 +1,34 @@
 <div align="center">
 
-# lib_ui — Accessibility
-
-<p>Screen reader accessibility for Telegram Desktop's UI framework</p>
-
-<p>
-  <a href="#english"><strong>English</strong></a> |
-  <a href="#فارسی"><strong>فارسی</strong></a>
-</p>
-
-<p>
-  <em>Fork of <a href="https://github.com/desktop-app/lib_ui">desktop-app/lib_ui</a></em>
-</p>
+**[فارسی](README.fa.md)** | **English**
 
 </div>
 
----
+# lib_ui — Accessibility
 
-<details open>
-<summary id="english"><h2>English</h2></summary>
+Screen reader accessibility for Telegram Desktop's UI framework
 
-### About
+> Fork of [desktop-app/lib_ui](https://github.com/desktop-app/lib_ui)
 
-This fork contains accessibility changes for [lib_ui](https://github.com/desktop-app/lib_ui), the UI framework used by Telegram Desktop. These changes provide the foundation that makes Telegram Desktop's widgets accessible to screen readers.
+## About
 
-The work includes proper accessibility roles and names for all core widgets, keyboard navigation for interactive controls, state reporting for checkboxes and toggles, UIAutomation Invoke support, and the `Accessible::Item` infrastructure for exposing custom-painted elements.
+This fork contains the accessibility changes for lib_ui, Telegram Desktop's UI framework. These changes provide the foundation that makes Telegram Desktop's widgets accessible to screen readers.
 
-### Contributions Merged Upstream — 7 PRs
+The work includes proper accessibility roles and names for all base widgets, keyboard navigation for interactive controls, state reporting for checkboxes and toggles, UIAutomation Invoke support, and the Accessible::Item infrastructure for exposing custom-painted elements.
 
-| PR | Description | Merged |
-|----|-------------|--------|
-| [#265](https://github.com/desktop-app/lib_ui/pull/265) | **Core widget accessibility** — Accessibility factory, roles and names for FlatLabel, FlatButton, RoundButton, IconButton, SettingsButton, LinkButton, InputField, Checkbox, Radiobutton, PopupMenu, MenuItem, Tooltip, BoxContent; keyboard activation (Space/Enter) for AbstractButton; `StrongFocus` policy management when screen reader is active | Oct 2025 |
-| [#268](https://github.com/desktop-app/lib_ui/pull/268) | **Checkbox and Radiobutton keyboard navigation** — Space/Enter/Return to toggle Checkbox; arrow keys to navigate between Radiobuttons in same group (auto-detects vertical vs horizontal layout); `accessibilityState()` and `accessibilityValue()` virtual API on RpWidget; `accessibilityStateChanged` and `accessibilityValueChanged` notification helpers | Nov 2025 |
-| [#270](https://github.com/desktop-app/lib_ui/pull/270) | **Button pressed state and Checkbox fix** — Pressed state reporting for AbstractButton; fixed `accessibilityStateChanged` in Checkbox to flag which field changed rather than sending the current value | Nov 2025 |
-| [#271](https://github.com/desktop-app/lib_ui/pull/271) | **Revert pressed state** — Qt does not reliably propagate the pressed state via `QAbstractButton`, so AbstractButton changes were reverted; Checkbox fix from #270 was preserved | Nov 2025 |
-| [#272](https://github.com/desktop-app/lib_ui/pull/272) | **SideBarButton accessibility name** — Returns button text with badge count (e.g. "Chats (3)"); fires `accessibilityNameChanged` when badge updates | Nov 2025 |
-| [#275](https://github.com/desktop-app/lib_ui/pull/275) | **UIAutomation Invoke support** — `accessibilityActionNames()` and `accessibilityDoAction()` virtual API on RpWidget; AbstractButton and Checkbox expose "press" action; deferred activation via `QTimer::singleShot(0)` with safety guards; compatible with NVDA Insert+Enter and JAWS default action | Dec 2025 |
-| [#277](https://github.com/desktop-app/lib_ui/pull/277) | **SettingsButton toggle state** — Reports `checkable` and `checked` state when a toggle is present; fires `accessibilityStateChanged` on toggle changes | Dec 2025 |
+## Contributions Merged Upstream — 7 PRs
 
-### Key Files
+| PR | Description | Date |
+|----|-------------|------|
+| [#265](https://github.com/desktop-app/lib_ui/pull/265) | **Core widget accessibility** — Roles and names for FlatLabel, all button types, inputs, menus, tooltips; keyboard activation for AbstractButton; accessibility factory | Oct 2025 |
+| [#268](https://github.com/desktop-app/lib_ui/pull/268) | **Checkbox and Radiobutton** — Keyboard navigation (Space/Enter to toggle, arrow keys for radio groups), accessibility state/value API on RpWidget, checked/checkable state reporting | Nov 2025 |
+| [#270](https://github.com/desktop-app/lib_ui/pull/270) | **Button pressed state** — Pressed state reporting for AbstractButton, Checkbox state change notification fix | Nov 2025 |
+| [#271](https://github.com/desktop-app/lib_ui/pull/271) | **Revert pressed state** — Qt does not reliably propagate the pressed state; reverted AbstractButton change while keeping the Checkbox fix | Nov 2025 |
+| [#272](https://github.com/desktop-app/lib_ui/pull/272) | **SideBarButton name** — Accessibility name with badge count (e.g. "Chats (3)"), live update on badge change | Nov 2025 |
+| [#275](https://github.com/desktop-app/lib_ui/pull/275) | **UIAutomation Invoke** — Screen readers can activate buttons and checkboxes via the Invoke pattern (NVDA: Insert+Enter, JAWS: default action) | Dec 2025 |
+| [#277](https://github.com/desktop-app/lib_ui/pull/277) | **SettingsButton toggles** — Checked/unchecked state reporting for toggle switches with live change notifications | Dec 2025 |
+
+## Key Files
 
 | File | Purpose |
 |------|---------|
@@ -50,48 +40,6 @@ The work includes proper accessibility roles and names for all core widgets, key
 | `ui/widgets/checkbox.h/cpp` | Keyboard toggle, checked state reporting |
 | `ui/widgets/continuous_sliders.h/cpp` | Keyboard navigation, value reporting |
 
-</details>
+## License
 
----
-
-<details>
-<summary id="فارسی"><h2>فارسی</h2></summary>
-
-<div dir="rtl" align="right">
-
-### درباره پروژه
-
-این فورک شامل تغییرات دسترس‌پذیری برای [lib_ui](https://github.com/desktop-app/lib_ui)، فریم‌ورک رابط کاربری تلگرام دسکتاپ، است. این تغییرات پایه‌ای را فراهم می‌کنند که ویجت‌های تلگرام دسکتاپ را برای صفحه‌خوان‌ها قابل دسترس می‌سازد.
-
-کارهای انجام‌شده شامل نقش‌ها و نام‌های مناسب دسترس‌پذیری برای تمام ویجت‌های پایه، پیمایش کیبورد برای کنترل‌های تعاملی، گزارش وضعیت برای چک‌باکس‌ها و تاگل‌ها، پشتیبانی از UIAutomation Invoke، و زیرساخت `Accessible::Item` برای نمایش عناصر ترسیم‌شده سفارشی است.
-
-### تغییرات ادغام‌شده در مخزن رسمی — ۷ PR
-
-</div>
-
-| PR | توضیحات | تاریخ |
-|----|---------|-------|
-| [#265](https://github.com/desktop-app/lib_ui/pull/265) | <div dir="rtl"><strong>دسترس‌پذیری ویجت‌های پایه</strong> — فکتوری دسترس‌پذیری، نقش‌ها و نام‌ها برای FlatLabel، انواع دکمه‌ها، ورودی‌ها، منوها، راهنماها؛ فعال‌سازی با کیبورد (Space/Enter)؛ مدیریت StrongFocus هنگام فعال بودن صفحه‌خوان</div> | اکتبر ۲۰۲۵ |
-| [#268](https://github.com/desktop-app/lib_ui/pull/268) | <div dir="rtl"><strong>پیمایش کیبورد چک‌باکس و رادیوباتن</strong> — Space/Enter برای تغییر چک‌باکس؛ کلیدهای جهتی برای پیمایش رادیوباتن‌ها؛ API مجازی <code>accessibilityState()</code> و <code>accessibilityValue()</code> روی RpWidget</div> | نوامبر ۲۰۲۵ |
-| [#270](https://github.com/desktop-app/lib_ui/pull/270) | <div dir="rtl"><strong>وضعیت فشرده دکمه و اصلاح چک‌باکس</strong> — گزارش وضعیت فشرده برای AbstractButton؛ اصلاح <code>accessibilityStateChanged</code> در چک‌باکس</div> | نوامبر ۲۰۲۵ |
-| [#271](https://github.com/desktop-app/lib_ui/pull/271) | <div dir="rtl"><strong>بازگردانی وضعیت فشرده</strong> — Qt وضعیت فشرده را به درستی منتقل نمی‌کند، تغییر AbstractButton برگردانده شد؛ اصلاح چک‌باکس حفظ شد</div> | نوامبر ۲۰۲۵ |
-| [#272](https://github.com/desktop-app/lib_ui/pull/272) | <div dir="rtl"><strong>نام دسترس‌پذیری SideBarButton</strong> — متن دکمه با تعداد نشان (مثلاً «Chats (3)»)؛ به‌روزرسانی زنده هنگام تغییر نشان</div> | نوامبر ۲۰۲۵ |
-| [#275](https://github.com/desktop-app/lib_ui/pull/275) | <div dir="rtl"><strong>پشتیبانی UIAutomation Invoke</strong> — API مجازی <code>accessibilityActionNames()</code> و <code>accessibilityDoAction()</code>؛ AbstractButton و Checkbox اکشن "press" را ارائه می‌دهند؛ سازگار با NVDA و JAWS</div> | دسامبر ۲۰۲۵ |
-| [#277](https://github.com/desktop-app/lib_ui/pull/277) | <div dir="rtl"><strong>وضعیت تاگل SettingsButton</strong> — گزارش وضعیت <code>checkable</code> و <code>checked</code> هنگام وجود تاگل؛ اطلاع‌رسانی زنده تغییرات</div> | دسامبر ۲۰۲۵ |
-
-<div dir="rtl" align="right">
-
-### فایل‌های کلیدی
-
-</div>
-
-| فایل | کاربرد |
-|------|--------|
-| `ui/accessibility.h/cpp` | <div dir="rtl">فکتوری دسترس‌پذیری</div> |
-| `ui/accessible/ui_accessible_widget.h/cpp` | <div dir="rtl"><code>Accessible::Widget</code> — رابط دسترس‌پذیری برای RpWidget</div> |
-| `ui/accessible/ui_accessible_item.h/cpp` | <div dir="rtl"><code>Accessible::Item</code> و <code>SubItem</code> — فرزندان مجازی</div> |
-| `ui/rp_widget.h` | <div dir="rtl">متدهای مجازی دسترس‌پذیری پایه</div> |
-| `ui/widgets/buttons.h/cpp` | <div dir="rtl">فعال‌سازی کیبورد، وضعیت فشرده، API اکشن</div> |
-| `ui/widgets/checkbox.h/cpp` | <div dir="rtl">تغییر با کیبورد، گزارش وضعیت</div> |
-
-</details>
+This project is licensed under the [GNU General Public License v3.0](LICENSE), with an OpenSSL exception.
