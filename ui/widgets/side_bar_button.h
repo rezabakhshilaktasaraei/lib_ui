@@ -39,6 +39,10 @@ public:
 
 	[[nodiscard]] bool locked() const;
 
+	void setIsMenuButton(bool value) { _isMenuButton = value; }
+	QAccessible::Role accessibilityRole() override {
+		return _isMenuButton ? QAccessible::ButtonMenu : QAccessible::Button;
+	}
 	QString accessibilityName() override {
 		return !_badge.isEmpty()
 			? u"%1 (%2)"_q.arg(_text.toString(), _badge.toString())
@@ -61,6 +65,7 @@ private:
 	QImage _iconCacheActive;
 	int _iconCacheBadgeWidth = 0;
 	bool _active = false;
+	bool _isMenuButton = false;
 	bool _badgeMuted = false;
 
 	Fn<bool()> _paused;
