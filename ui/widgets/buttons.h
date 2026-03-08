@@ -233,6 +233,11 @@ public:
 	void setIconColorOverride(std::optional<QColor> colorOverride);
 	void setRippleColorOverride(const style::color *colorOverride);
 
+	void setIsMenuButton(bool value) { _isMenuButton = value; }
+	QAccessible::Role accessibilityRole() override {
+		return _isMenuButton ? QAccessible::ButtonMenu : QAccessible::Button;
+	}
+
 protected:
 	void paintEvent(QPaintEvent *e) override;
 
@@ -251,6 +256,8 @@ private:
 	std::optional<QColor> _iconColorOverride;
 
 	Ui::Animations::Simple _a_over;
+
+	bool _isMenuButton = false;
 
 };
 
