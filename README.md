@@ -20,9 +20,9 @@ This repository is a fork of [desktop-app/lib_ui](https://github.com/desktop-app
 | [#286](https://github.com/desktop-app/lib_ui/pull/286) | Accessibility: Improve menu accessibility states and navigation | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.6.0 |
 | [#292](https://github.com/desktop-app/lib_ui/pull/292) | feat(accessibility): add ButtonMenu role to IconButton and SideBarButton | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.6.4 |
 | [#293](https://github.com/desktop-app/lib_ui/pull/293) | Restore menu item focus for accessibility, fix DropdownMenu | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.6.4 |
-| [#308](https://github.com/desktop-app/lib_ui/pull/308) | Let ElasticScroll pass unhandled keys to the parent | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
-| [#304](https://github.com/desktop-app/lib_ui/pull/304) | feat(accessibility): support PageTab role and selected state on buttons | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
-| [#311](https://github.com/desktop-app/lib_ui/pull/311) | Use List/ListItem accessibility role for ordered button strips | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | Unreleased |
+| [#308](https://github.com/desktop-app/lib_ui/pull/308) | Let ElasticScroll pass unhandled keys to the parent | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#304](https://github.com/desktop-app/lib_ui/pull/304) | feat(accessibility): support PageTab role and selected state on buttons | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#311](https://github.com/desktop-app/lib_ui/pull/311) | Use List/ListItem accessibility role for ordered button strips | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 
 ## What Was Added
 
