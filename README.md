@@ -23,6 +23,8 @@ This repository is a fork of [desktop-app/lib_ui](https://github.com/desktop-app
 | [#308](https://github.com/desktop-app/lib_ui/pull/308) | Let ElasticScroll pass unhandled keys to the parent | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 | [#304](https://github.com/desktop-app/lib_ui/pull/304) | feat(accessibility): support PageTab role and selected state on buttons | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
 | [#311](https://github.com/desktop-app/lib_ui/pull/311) | Use List/ListItem accessibility role for ordered button strips | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#303](https://github.com/desktop-app/lib_ui/pull/303) | feat(accessibility): support SetFocus and Press actions on painted list items | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v6.9.4 |
+| [#319](https://github.com/desktop-app/lib_ui/pull/319) | Add multi-select fields to AccessibilityState | [@rezabakhshilaktasaraei](https://github.com/rezabakhshilaktasaraei) | v7.0.1 |
 
 ## What Was Added
 
@@ -36,6 +38,8 @@ This repository is a fork of [desktop-app/lib_ui](https://github.com/desktop-app
 - **DropdownMenu focus** — Restores focus to the correct menu item for accessibility
 - **`ElasticScroll` key handling** — Passes unhandled keys (arrows, Home/End) to the parent so scrolled lists stay keyboard-navigable
 - **Ordered strips as lists** — `List` / `ListItem` roles (and `PageTab` role with selected state) for ordered button strips such as the chat-folders bar
+- **Painted-item actions** — `SetFocus` and `Press` action support on `Accessible::Item`, so screen readers can focus and activate custom-drawn list rows (also makes the items expose a press action, which the chat list relies on)
+- **Multi-selection state** — Multi-select fields on `AccessibilityState`, so lists that support selecting several rows (e.g. message history) can report their selection to screen readers
 
 ## Key Files
 
